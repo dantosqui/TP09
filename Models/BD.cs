@@ -14,4 +14,13 @@ public class BD{
         Console.WriteLine(correcto);
         return correcto;
     }
+
+    public static void CambiarContraseña(string username, string contraseña){
+
+        using(SqlConnection db = new SqlConnection(_connectionstring)){
+            string sql="EXEC CambiarContraseña @pUsername, @pContraseña";
+            db.Execute(sql, new{pUsername=username,pContraseña=contraseña});
+        }
+    }
+    
 }
