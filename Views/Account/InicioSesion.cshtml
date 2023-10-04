@@ -13,5 +13,5 @@
     <input type="password" class="form-control" id="exampleInputPassword1" name="contraseña">
   </div>
   <button type="submit" class="btn btn-primary">Ingresar</button>
-  <p>@ViewBag.ErrorInicio</p> <a href='@Url.Action("ContraseñaOlvidada")'>Olvidaste tu contraseña?</a>
+  <p>@ViewBag.ErrorInicio</p> <a href='@Url.Action("ContraseñaOlvidada", "Account")'>¿Olvidaste tu contraseña?</a> <br> <a href='@Url.Action("ContraseñaOlvidada", "Account")'>¿Eres nuevo? Registrate</a>
 </form>

@@ -4,11 +4,7 @@ namespace tp09.Controllers;
 
 public class HomeController : Controller
 {
-    public IActionResult Index()
-    {
-        return View();
-    }
-    public IActionResult InicioSesion(){
+    public IActionResult Index(){
         return View();
     }
     
@@ -16,9 +12,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult ContraseñaOlvidada(){
-        return View();
-    }
-
+    
     
 }
