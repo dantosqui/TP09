@@ -1,0 +1,62 @@
+<h1> Registracion </h1>
+
+<form method="post" action='@Url.Action("Registro","Account")'>
+
+
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Usuario</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuario" required>
+    </div>
+
+@* input contraseña *@
+<div class="mb-3">
+    <label for="inputPassword5" class="form-label">Contraseña</label>
+    <input type="password" id="inputPassword1" class="form-control" aria-describedby="passwordHelpBlock" name="contraseña" required>
+    <div id="passwordHelpBlock" class="form-text">
+      La contraseña debe tener entre 8 y 100 caracteres, al menos un caracter especial y una letra en mayuscula.
+    </div>
+</div>
+
+@* repita contraseña *@
+<div class="mb-3">
+<label for="inputPassword5" class="form-label">Repita su contraseña</label>
+<input type="password" id="inputPassword2" class="form-control" aria-describedby="passwordHelpBlock" required>
+</div>
+
+@* mail *@
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+</div>
+
+@* fechanacimiento *@
+<div class="mb-3">
+
+    <label for="fechainput" class="form-label">Fecha de nacimiento</label>
+    <input type="date" name="fechanacimiento" class="form-control" id="fechainput" required>
+</div>
+
+@* sexo *@
+<div class="mb-3">
+
+    <select class="form-select" aria-label="Default select example" name="sexo">
+  <option selected>Sexo</option>
+  <option value="h">Hombre</option>
+  <option value="m">Mujer</option>
+  <option value="o">No binario</option>
+  <option value="NULL">Prefiero no decirlo</option>
+</select>
+
+
+</div>
+
+@* fotoperfil *@
+
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">URL de Foto de perfil</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fotoperfil">
+    </div>
+
+
+</form>

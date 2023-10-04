@@ -32,7 +32,9 @@ public class AccountController : Controller
     }
 
     public IActionResult Registrarse(){
-        return View()
+        return View();
     }
+
+    
 
 }
