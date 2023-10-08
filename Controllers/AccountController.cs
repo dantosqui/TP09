@@ -35,6 +35,11 @@ public class AccountController : Controller
         return View();
     }
 
+    public IActionResult Registro(string usuario, string contraseña, string email, string fechanacimiento, char sexo, string fotoperfil){
+        BD.Registro(usuario,contraseña,email,fechanacimiento,sexo,fotoperfil);
+        return View("Registrado");
+    }
+
     
 
 }

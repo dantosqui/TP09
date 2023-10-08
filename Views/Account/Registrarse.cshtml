@@ -11,23 +11,25 @@
 @* input contraseña *@
 <div class="mb-3">
     <label for="inputPassword5" class="form-label">Contraseña</label>
-    <input type="password" id="inputPassword1" class="form-control" aria-describedby="passwordHelpBlock" name="contraseña" required>
-    <div id="passwordHelpBlock" class="form-text">
-      La contraseña debe tener entre 8 y 100 caracteres, al menos un caracter especial y una letra en mayuscula.
+    <input type="password" id="campocontraseña" class="form-control" aria-describedby="passwordHelpBlock" name="contraseña" required oninput="Checkear()">
+    <div id="infocontraseña" class="form-text">
+      <span>La contraseña debe tener: </span> <span style="color:red" id="largo">entre 8 y 100 caracteres</span><span style="color:red" id="caracterEspecial">, al menos un caracter especial</span><span style="color:red" id="letraMayuscula"> y al menos una letra en mayuscula.</span>
     </div>
 </div>
 
 @* repita contraseña *@
 <div class="mb-3">
 <label for="inputPassword5" class="form-label">Repita su contraseña</label>
-<input type="password" id="inputPassword2" class="form-control" aria-describedby="passwordHelpBlock" required>
+<input type="password" id="campocontraseña2" class="form-control" aria-describedby="passwordHelpBlock" required oninput="Checkear()">
+    <div id="coincidenciacontras" class="form-text">
+        <span id="coinciden"style="color:red"></span>
+    </div>
 </div>
 
 @* mail *@
 <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 </div>
 
 @* fechanacimiento *@
@@ -40,12 +42,12 @@
 @* sexo *@
 <div class="mb-3">
 
-    <select class="form-select" aria-label="Default select example" name="sexo">
-  <option selected>Sexo</option>
+    <label for="sexoinput" class="form-label">Sexo</label>
+    <select class="form-select" id="sexoinput" aria-label="Default select example" name="sexo">
   <option value="h">Hombre</option>
   <option value="m">Mujer</option>
   <option value="o">No binario</option>
-  <option value="NULL">Prefiero no decirlo</option>
+  <option selected value="null">Prefiero no decirlo</option>
 </select>
 
 
@@ -58,5 +60,5 @@
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fotoperfil">
     </div>
 
-
+ <button type="submit" class="btn btn-primary" disabled id="submitform">Submit</button>
 </form>
