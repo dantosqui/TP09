@@ -5,7 +5,7 @@
 <form method="get" action='@Url.Action("CambiarContraseña", "Account")'>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Usuario</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuario">
+    <input type="text" class="form-control inputrequired" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuario">
     </div>
     @if (ViewBag.error){
           <span style="color:red">Error: Usuario o pregunta incorrectos</span>
@@ -15,20 +15,20 @@
 <div class="mb-3">
 
     <label for="inputpregunta" class="form-label">Pregunta de seguridad</label>
-    <select class="form-select" id="inputpregunta" aria-label="Default select example" name="idpregunta">
+    <select class="form-select inputrequired" id="inputpregunta" aria-label="Default select example" name="idpregunta">
 @for (int i=0; i<ViewBag.Preguntas.Count; i++){
     <option value=@ViewBag.Preguntas[i].Idpregunta>@ViewBag.Preguntas[i].Pregunta</option>
 }
 </select>
 
-    <input type="text" class="form-control" id="respuesta" aria-describedby="emailHelp" name="respuesta">
+    <input type="text" class="form-control inputrequired" id="respuesta" aria-describedby="emailHelp" name="respuesta">
 
 </div>
 
     <!-- ingrese contraseña -->
   <div class="mb-3">
     <label for="inputPassword5" class="form-label">Contraseña</label>
-    <input type="password" id="campocontraseña" class="form-control" aria-describedby="passwordHelpBlock" name="contraseña" required oninput="Checkear()">
+    <input type="password" id="campocontraseña" class="form-control inputrequired" aria-describedby="passwordHelpBlock" name="contraseña" required oninput="Checkear()">
     <div id="infocontraseña" class="form-text">
       <span>La contraseña debe tener: </span> <span style="color:red" id="largo">entre 8 y 100 caracteres</span><span style="color:red" id="caracterEspecial">, al menos un caracter especial</span><span style="color:red" id="letraMayuscula"> y al menos una letra en mayuscula.</span>
     </div>
@@ -37,7 +37,7 @@
 @* repita contraseña *@
 <div class="mb-3">
 <label for="inputPassword5" class="form-label">Repita su contraseña</label>
-<input type="password" id="campocontraseña2" class="form-control" aria-describedby="passwordHelpBlock" required oninput="Checkear()">
+<input type="password" id="campocontraseña2" class="form-control inputrequired" aria-describedby="passwordHelpBlock" required oninput="Checkear()">
     <div id="coincidenciacontras" class="form-text">
         <span id="coinciden"style="color:red"></span>
     </div>

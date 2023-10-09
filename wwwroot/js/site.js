@@ -2,7 +2,8 @@
 
     const checkcontra=checkcontraseña()
     const checkcoinci=checkcoincidencia()
-    if (checkcontra && checkcoinci){
+    const checkcamp=checkcampos()
+    if (checkcontra && checkcoinci && checkcamp){
         document.getElementById("submitform").removeAttribute("disabled")
     }
     else{
@@ -90,3 +91,17 @@ function checkcoincidencia(){
     }
 }
 
+function checkcampos(){
+    const listainputs=document.getElementsByClassName("inputrequired")
+    console.log(listainputs)
+    listainputs.forEach(i => {
+        if (i.value!==""){
+            console.log("true")
+            return true
+        }
+        else{
+            console.log("false")
+            return false
+        }
+    });
+}
