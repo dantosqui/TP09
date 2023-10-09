@@ -58,7 +58,17 @@
 <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">URL de Foto de perfil</label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fotoperfil">
-    </div>
+</div>
+
+<div class="mb-3">
+
+    <label for="inputpregunta" class="form-label">Pregunta de seguridad</label>
+    <select class="form-select" id="inputpregunta" aria-label="Default select example">
+@for (int i=0; i<ViewBag.Preguntas.length; i++){
+    
+}
+</select>
+</div>
 
  <button type="submit" class="btn btn-primary" disabled id="submitform">Submit</button>
 </form>

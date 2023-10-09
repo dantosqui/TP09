@@ -11,6 +11,7 @@ public class AccountController : Controller
 
     
     public IActionResult ContraseñaOlvidada(){
+        ViewBag.error=false;
         return View();
     }
     
@@ -27,8 +28,13 @@ public class AccountController : Controller
     }
     
     public IActionResult CambiarContraseña(string contraseña, string usuario){
-        BD.CambiarContraseña(usuario,contraseña);
-        return View("InicioSesion");
+        int resultado=BD.CambiarContraseña(usuario,contraseña);
+        if (resultado==1){
+        return View("InicioSesion");}
+        else{
+            ViewBag.error=true;
+            return View("ContraseñaOlvidada");
+        }
     }
 
     public IActionResult Registrarse(){
