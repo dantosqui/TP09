@@ -40,5 +40,15 @@ public class BD{
         }
         return preguntas;
     }
+
+    public static int ValidarPregunta(int id, string rta,string usuario){
+
+        int result=0;
+        using (SqlConnection db=new SqlConnection(_connectionstring)){
+            string sql = "EXEC ValidarPregunta @pid, @rt, @user";
+            result=db.QueryFirstOrDefault<int>(sql, new{pid=id,rt=rta,user=usuario});
+        }
+        return result;
+    }
     
 }
