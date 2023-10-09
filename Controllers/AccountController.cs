@@ -38,14 +38,16 @@ public class AccountController : Controller
     }
 
     public IActionResult Registrarse(){
+        ViewBag.Preguntas=BD.ListarPreguntas();
         return View();
+
     }
 
-    public IActionResult Registro(string usuario, string contraseña, string email, string fechanacimiento, char sexo, string fotoperfil){
-        BD.Registro(usuario,contraseña,email,fechanacimiento,sexo,fotoperfil);
+    public IActionResult Registro(string usuario, string contraseña, string email, string fechanacimiento, char sexo, string fotoperfil,int idpregunta,string respuesta){
+        BD.Registro(usuario,contraseña,email,fechanacimiento,sexo,fotoperfil,idpregunta,respuesta);
         return View("Registrado");
     }
 
-    
+
 
 }

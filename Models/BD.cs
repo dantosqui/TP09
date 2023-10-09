@@ -23,12 +23,22 @@ public class BD{
         return resultado;
     }
 
-    public static void Registro(string us, string con, string em, string fec, char se, string fot){
+    public static void Registro(string us, string con, string em, string fec, char se, string fot,int preg,string rta){
 
         using (SqlConnection db= new SqlConnection(_connectionstring)){
-            string sql ="EXEC registrarse @u,@c,@e,@f,@s,@fo";
-            db.Execute(sql, new{u=us,c=con,e=em,f=fec,s=se,fo=fot});
+            string sql ="EXEC registrarse @u,@c,@e,@f,@s,@fo,@pr,@rt";
+            db.Execute(sql, new{u=us,c=con,e=em,f=fec,s=se,fo=fot,pr=preg,rt=rta});
         }
+    }
+    
+    public static List<Preguntas> ListarPreguntas(){
+
+        List<Preguntas> preguntas = new List<Preguntas>();
+        using (SqlConnection db = new SqlConnection(_connectionstring)){
+            string sql ="SELECT * FROM Preguntas";
+            preguntas=db.Query<Preguntas>(sql).ToList();
+        }
+        return preguntas;
     }
     
 }

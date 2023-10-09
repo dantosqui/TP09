@@ -60,14 +60,18 @@
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fotoperfil">
 </div>
 
+<!-- pregunta de seguridad -->
 <div class="mb-3">
 
     <label for="inputpregunta" class="form-label">Pregunta de seguridad</label>
-    <select class="form-select" id="inputpregunta" aria-label="Default select example">
-@for (int i=0; i<ViewBag.Preguntas.length; i++){
-    
+    <select class="form-select" id="inputpregunta" aria-label="Default select example" name="idpregunta">
+@for (int i=0; i<ViewBag.Preguntas.Count; i++){
+    <option value=@ViewBag.Preguntas[i].Idpregunta>@ViewBag.Preguntas[i].Pregunta</option>
 }
 </select>
+
+    <input type="text" class="form-control" id="respuesta" aria-describedby="emailHelp" name="respuesta">
+
 </div>
 
  <button type="submit" class="btn btn-primary" disabled id="submitform">Submit</button>
