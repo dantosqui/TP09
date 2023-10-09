@@ -5,13 +5,13 @@
 
 <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Usuario</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuario" required>
+    <input type="text" class="inputrequired form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuario" required>
     </div>
 
 @* input contraseña *@
 <div class="mb-3">
     <label for="inputPassword5" class="form-label">Contraseña</label>
-    <input type="password" id="campocontraseña" class="form-control" aria-describedby="passwordHelpBlock" name="contraseña" required oninput="Checkear()">
+    <input type="password" id="campocontraseña" class="inputrequired form-control" aria-describedby="passwordHelpBlock" name="contraseña" required oninput="Checkear()">
     <div id="infocontraseña" class="form-text">
       <span>La contraseña debe tener: </span> <span style="color:red" id="largo">entre 8 y 100 caracteres</span><span style="color:red" id="caracterEspecial">, al menos un caracter especial</span><span style="color:red" id="letraMayuscula"> y al menos una letra en mayuscula.</span>
     </div>
@@ -20,7 +20,7 @@
 @* repita contraseña *@
 <div class="mb-3">
 <label for="inputPassword5" class="form-label">Repita su contraseña</label>
-<input type="password" id="campocontraseña2" class="form-control" aria-describedby="passwordHelpBlock" required oninput="Checkear()">
+<input type="password" id="campocontraseña2" class="inputrequired form-control" aria-describedby="passwordHelpBlock" required oninput="Checkear()">
     <div id="coincidenciacontras" class="form-text">
         <span id="coinciden"style="color:red"></span>
     </div>
@@ -29,14 +29,14 @@
 @* mail *@
 <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+    <input type="email" name="email" class="inputrequired form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required oninput="Checkear()">
 </div>
 
 @* fechanacimiento *@
 <div class="mb-3">
 
     <label for="fechainput" class="form-label">Fecha de nacimiento</label>
-    <input type="date" name="fechanacimiento" class="form-control" id="fechainput" required>
+    <input type="date" name="fechanacimiento" class="inputrequired form-control" id="fechainput" required oninput="Checkear()">
 </div>
 
 @* sexo *@
@@ -57,7 +57,7 @@
 
 <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">URL de Foto de perfil</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fotoperfil">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fotoperfil" oninput="Checkear()">
 </div>
 
 <!-- pregunta de seguridad -->
@@ -70,7 +70,7 @@
 }
 </select>
 
-    <input type="text" class="form-control" id="respuesta" aria-describedby="emailHelp" name="respuesta">
+    <input type="text" class="inputrequired form-control" id="respuesta" aria-describedby="emailHelp" name="respuesta" oninput="Checkear()">
 
 </div>
 

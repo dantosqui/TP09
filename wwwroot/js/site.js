@@ -93,15 +93,13 @@ function checkcoincidencia(){
 
 function checkcampos(){
     const listainputs=document.getElementsByClassName("inputrequired")
-    console.log(listainputs)
-    listainputs.forEach(i => {
-        if (i.value!==""){
-            console.log("true")
-            return true
+    let i=0;
+    while(i<listainputs.length){
+        if (listainputs[i].value===""){
+            console.log(listainputs[i].id)
+            return false   
         }
-        else{
-            console.log("false")
-            return false
-        }
-    });
+        i++
+    }
+    return true
 }
