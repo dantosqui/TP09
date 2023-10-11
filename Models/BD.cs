@@ -50,5 +50,15 @@ public class BD{
         }
         return result;
     }
+
+    public static Usuarios GetUsuario(string usuario){
+
+        Usuarios user= new Usuarios();
+        using (SqlConnection db=new SqlConnection(_connectionstring)){
+            string sql = "EXEC GetUsuario @user";
+            user=db.QueryFirstOrDefault<Usuarios>(sql, new{user=usuario});
+        }
+        return user;
+    }
     
 }

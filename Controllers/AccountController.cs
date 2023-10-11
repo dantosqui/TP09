@@ -19,11 +19,14 @@ public class AccountController : Controller
     public IActionResult Login(string usuario,string contraseña){
         bool correcto = BD.Login(usuario,contraseña);
         if (correcto){
+            Usuarios user = BD.GetUsuario(usuario);
+            ViewBag.Usuario=user;
             return View("PaginaInicio");
         }
 
         else{
             ViewBag.ErrorInicio="Contraseña o usuario incorrectos. Intente otra vez.";
+            
             return View("InicioSesion");
         }
     }

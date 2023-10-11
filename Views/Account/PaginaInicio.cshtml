@@ -3,3 +3,14 @@
 }
 
 <h1> hola usuario</h1>
+
+
+<div class="card" style="width: 18rem;">
+
+  <img src="@ViewBag.Usuario.foto" class="card-img-top" alt="foto de perfil" width="100%">
+  <div class="card-body">
+    <h5 class="card-title">@ViewBag.Usuario.username</h5>
+    <p class="card-text">correo electronico: @ViewBag.Usuario.email</p>
+    <p class="card-text">registrado el: @ViewBag.Usuario.fechaRegistro</p>
+  </div>
+</div>
